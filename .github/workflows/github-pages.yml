@@ -27,6 +27,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - run: cd pages-sample-app
       - run: npm ci
       - run: npm test
       - run: npm run generate
