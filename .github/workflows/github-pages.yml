@@ -21,13 +21,13 @@ jobs:
 
       - name: Cache dependencies
         uses: actions/cache@v2
+        working-directory: ./pages-sample-app
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: cd pages-sample-app
       - run: npm ci
       - run: npm test
       - run: npm run generate
