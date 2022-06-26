@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: '16'
 
+      - name: check node version
+        run: |
+          node --version
+          yarn --version
+
       - name: Install and Build 🔧
         working-directory: ./pages-sample-app
         run: |
