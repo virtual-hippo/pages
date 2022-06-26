@@ -15,6 +15,12 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: cd progect dir
+        run: cd ./pages-sample-app
+
+      - name: check current dir
+        run: pwd
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -22,7 +28,6 @@ jobs:
           cache: yarn
 
       - name: Install and Build 🔧
-        working-directory: ./pages-sample-app
         run: |
           yarn install --frozen-lockfile
           yarn build
@@ -31,4 +36,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pages-sample-app/dist
+          publish_dir: ./dist
