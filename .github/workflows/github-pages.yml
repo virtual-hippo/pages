@@ -21,7 +21,7 @@ jobs:
 
       - name: Cache dependencies
         uses: actions/cache@v2
-        working-directory: ./sample_web
+        working-directory: ./pages-sample-app
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
