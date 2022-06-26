@@ -16,11 +16,10 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node
-        working-directory: ./pages-sample-app
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: yarn
+          cache: ./pages-sample-app/yarn
 
       - name: Install and Build 🔧
         working-directory: ./pages-sample-app
