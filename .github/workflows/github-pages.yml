@@ -22,6 +22,7 @@ jobs:
           yarn build
 
       - name: deploy
+        working-directory: ./pages-sample-app
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
