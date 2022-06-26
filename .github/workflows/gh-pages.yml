@@ -23,6 +23,7 @@ jobs:
           yarn build
 
       - name: deploy
+        run: pwd
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
