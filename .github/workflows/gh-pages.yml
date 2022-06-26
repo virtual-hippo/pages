@@ -15,15 +15,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.14.x
-          cache: yarn
-
       - name: Install and Build 🔧
         working-directory: ./pages-sample-app
         run: |
+          pwd
           yarn
           yarn build
 
